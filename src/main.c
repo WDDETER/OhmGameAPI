@@ -108,6 +108,9 @@ int main(void) {
 
         while (OGA_context_running()) {
 
+                OGA_context_poll();
+
+                
                 glClear(GL_COLOR_BUFFER_BIT);
 
                 glUseProgram(shader_program);
@@ -115,9 +118,8 @@ int main(void) {
 
                 glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-
+                
                 OGA_window_swap(&window);
-                OGA_context_poll();
 
         }
 
